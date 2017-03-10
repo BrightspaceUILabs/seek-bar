@@ -1,5 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../iron-range-behavior/iron-range-behavior.html">
 <link rel="import" href="../d2l-colors/d2l-colors.html">
 <link rel="import" href="./d2l-progress.html">
 
@@ -11,17 +11,17 @@
 				@apply(--layout-justified);
 				@apply(--layout-center);
 				width: 300px;
+				display: inline-block;
 				--calculated-d2l-seek-bar-height: var(--d2l-seek-bar-height, 4px);
 				--calculated-d2l-knob-size: var(--d2l-knob-size, 32px);
 				--half-knob-size: calc(var(--calculated-d2l-knob-size)/2);
 				--half-knob-size-overflow: calc(var(--half-knob-size) - var(--calculated-d2l-seek-bar-height)/2);
 				--knob-size-overflow: calc(var(--half-knob-size-overflow)*2);
 				--calculated-inner-knob-margin: var(--d2l-inner-knob-margin, 10px);
-				--calculated-d2l-outer-knob-color: var(--d2l-outer-knob-color, var(--d2l-color-gypsum));
+				--calculated-d2l-outer-knob-color: var(--d2l-outer-knob-color, var(--d2l-color-regolith));
+				--calculated-d2l-outer-knob-border-color: var(--d2l-outer-knob-border-color, var(--d2l-color-titanius));
 				--calculated-d2l-inner-knob-color: var(--d2l-inner-knob-color, var(--d2l-color-celestine));
 			}
-
-			d2l-progress {}
 
 			#sliderContainer {
 				position: relative;
@@ -57,6 +57,7 @@
 				width: calc(var(--knob-size-overflow) + var(--calculated-d2l-seek-bar-height));
 				height: calc(var(--knob-size-overflow) + var(--calculated-d2l-seek-bar-height));
 				background-color: var(--calculated-d2l-outer-knob-color);
+				border: 1px solid var(--calculated-d2l-outer-knob-border-color);
 				border-radius: 50%;
 			}
 
@@ -69,11 +70,12 @@
 				border-radius: 50%;
 				box-sizing: border-box;
 			}
+
 		</style>
 
 		<div id="sliderContainer">
 			<div class="bar-container">
-				<d2l-progress id="sliderBar" value="[[immediateValue]]" on-down="_barDown" on-up="_barUp" on-track="_onTrack">
+				<d2l-progress id="sliderBar" value="{{immediateValue}}" on-down="_barDown" on-up="_barUp" on-track="_onTrack">
 				</d2l-progress>
 			</div>
 			<div id="sliderKnob" class="slider-knob" on-down="_knobDown" on-track="_onTrack">
@@ -106,7 +108,7 @@
 			},
 
 			observers: [
-				'_updateKnob(value)',
+				'_updateKnob(value, min, max)',
 				'_immediateValueChanged(immediateValue)',
 				'_draggingChanged(dragging)'
 			],
