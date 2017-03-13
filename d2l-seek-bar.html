@@ -22,6 +22,9 @@
 				--calculated-d2l-outer-knob-color: var(--d2l-outer-knob-color, var(--d2l-color-regolith));
 				--calculated-d2l-outer-knob-border-color: var(--d2l-outer-knob-border-color, var(--d2l-color-titanius));
 				--calculated-d2l-inner-knob-color: var(--d2l-inner-knob-color, var(--d2l-color-celestine));
+				--calculated-d2l-progress-border-color: var(--d2l-progress-border-color, var(--d2l-color-pressicus));
+				--calculated-d2l-progress-shadow-color: var(--d2l-progress-shadow-color, #dadee3);
+				--calculated-d2l-progress-background-color: var(--d2l-progress-background-color, var(--d2l-color-gypsum));
 			}
 
 			#sliderContainer {
@@ -43,10 +46,11 @@
 					border-radius: 4px;
 				}
 				--d2l-progress-container: {
-					border: 1px solid var(--d2l-color-pressicus);
+					border: 1px solid var(--calculated-d2l-progress-border-color);
 					border-radius: 4px;
-					box-shadow: inset 0 1px 0 0 #dadee3;
+					box-shadow: inset 0 1px 0 0 var(--calculated-d2l-progress-shadow-color);
 				}
+				--d2l-progress-container-color: var(--calculated-d2l-progress-background-color);
 			}
 
 			.slider-knob {
