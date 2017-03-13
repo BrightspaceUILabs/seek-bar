@@ -10,8 +10,9 @@
 				@apply(--layout);
 				@apply(--layout-justified);
 				@apply(--layout-center);
+
 				width: 300px;
-				display: inline-block;
+
 				--calculated-d2l-seek-bar-height: var(--d2l-seek-bar-height, 4px);
 				--calculated-d2l-knob-size: var(--d2l-knob-size, 32px);
 				--half-knob-size: calc(var(--calculated-d2l-knob-size)/2);
@@ -25,7 +26,6 @@
 
 			#sliderContainer {
 				position: relative;
-				width: 100%;
 				height: var(--calculated-d2l-knob-size);
 				margin-left: var(--half-knob-size);
 				margin-right: var(--half-knob-size);
@@ -54,8 +54,8 @@
 				left: 0;
 				top: 0;
 				margin-left: calc(-1*var(--half-knob-size-overflow) - var(--calculated-d2l-seek-bar-height)/2);
-				width: calc(var(--knob-size-overflow) + var(--calculated-d2l-seek-bar-height));
-				height: calc(var(--knob-size-overflow) + var(--calculated-d2l-seek-bar-height));
+				width: calc(var(--knob-size-overflow) + var(--calculated-d2l-seek-bar-height) - 2px);
+				height: calc(var(--knob-size-overflow) + var(--calculated-d2l-seek-bar-height) - 2px);
 				background-color: var(--calculated-d2l-outer-knob-color);
 				border: 1px solid var(--calculated-d2l-outer-knob-border-color);
 				border-radius: 50%;
