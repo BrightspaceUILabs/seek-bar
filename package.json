@@ -1,6 +1,6 @@
 {
   "name": "@d2l/seek-bar",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Polymer media seek bar component",
   "scripts": {
     "lint": "eslint *.html",
