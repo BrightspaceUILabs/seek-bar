@@ -15,7 +15,7 @@ A Polymer seek bar to use with audio and video players.
   		]
 	},
 	"resolvers": [
-  	"bower-art-resolver"
+		"bower-art-resolver"
 	]
 }
 ```
