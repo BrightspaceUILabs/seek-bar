@@ -10,9 +10,7 @@
 				@apply(--layout);
 				@apply(--layout-justified);
 				@apply(--layout-center);
-
-                display: block;
-
+				display: block;
 				--calculated-d2l-seek-bar-height: var(--d2l-seek-bar-height, 4px);
 				--calculated-d2l-knob-size: var(--d2l-knob-size, 32px);
 				--half-knob-size: calc(var(--calculated-d2l-knob-size)/2);
@@ -108,6 +106,11 @@
 					type: Boolean,
 					value: false,
 					readOnly: true
+				},
+
+				vertical: {
+					type: Boolean,
+					value: false
 				}
 			},
 
@@ -163,7 +166,7 @@
 						this._trackStart(event);
 						break;
 					case 'track':
-						this._trackX(event);
+						this._track(event);
 						break;
 					case 'end':
 						this._trackEnd();
@@ -181,12 +184,13 @@
 				this._setDragging(true);
 			},
 
-			_trackX: function(event) {
+			_track: function(event) {
 				if (!this.dragging) {
 					this._trackStart(event);
 				}
 
-				var dx = Math.min(this._maxx, Math.max(this._minx, event.detail.dx));
+				var mousePosition = this.vertical ? -event.detail.dy : event.detail.dx;
+				var dx = Math.min(this._maxx, Math.max(this._minx, mousePosition));
 				this._x = this._startx + dx;
 
 				var immediateValue = this._calcStep(this._calcKnobPosition(this._x / this._w));
