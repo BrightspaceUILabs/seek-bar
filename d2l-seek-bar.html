@@ -16,9 +16,9 @@
 				--half-knob-size: calc(var(--calculated-d2l-knob-size)/2);
 				--half-knob-size-overflow: calc(var(--half-knob-size) - var(--calculated-d2l-seek-bar-height)/2);
 				--knob-size-overflow: calc(var(--half-knob-size-overflow)*2);
-				--calculated-inner-knob-margin: var(--d2l-inner-knob-margin, 10px);
+				--calculated-inner-knob-margin: var(--d2l-inner-knob-margin, 9px);
 				--calculated-d2l-outer-knob-color: var(--d2l-outer-knob-color, var(--d2l-color-regolith));
-				--calculated-d2l-outer-knob-border-color: var(--d2l-outer-knob-border-color, var(--d2l-color-titanius));
+				--calculated-d2l-outer-knob-border-color: var(--d2l-outer-knob-border-color, var(--d2l-color-pressicus));
 				--calculated-d2l-inner-knob-color: var(--d2l-inner-knob-color, var(--d2l-color-celestine));
 				--calculated-d2l-progress-border-color: var(--d2l-progress-border-color, var(--d2l-color-pressicus));
 				--calculated-d2l-progress-shadow-color: var(--d2l-progress-shadow-color, #dadee3);
@@ -49,6 +49,7 @@
 					box-shadow: inset 0 1px 0 0 var(--calculated-d2l-progress-shadow-color);
 				}
 				--d2l-progress-container-color: var(--calculated-d2l-progress-background-color);
+				--d2l-progress-active-color: transparent;
 			}
 
 			.slider-knob {
@@ -77,8 +78,7 @@
 
 		<div id="sliderContainer">
 			<div class="bar-container">
-				<d2l-progress id="sliderBar" value="{{immediateValue}}" on-down="_barDown" on-up="_barUp" on-track="_onTrack">
-				</d2l-progress>
+				<d2l-progress id="sliderBar" value="{{immediateValue}}" on-down="_barDown" on-up="_barUp" on-track="_onTrack"></d2l-progress>
 			</div>
 			<div id="sliderKnob" class="slider-knob" on-down="_knobDown" on-track="_onTrack">
 				<div class="slider-knob-inner"></div>
