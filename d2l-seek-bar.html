@@ -17,6 +17,7 @@
 				--half-knob-size-overflow: calc(var(--half-knob-size) - var(--calculated-d2l-seek-bar-height)/2);
 				--knob-size-overflow: calc(var(--half-knob-size-overflow)*2);
 				--calculated-inner-knob-margin: var(--d2l-inner-knob-margin, 9px);
+				--calculated-d2l-knob-box-shadow: var(--d2l-knob-box-shadow, none);
 				--calculated-d2l-outer-knob-color: var(--d2l-outer-knob-color, var(--d2l-color-regolith));
 				--calculated-d2l-outer-knob-border-color: var(--d2l-outer-knob-border-color, var(--d2l-color-pressicus));
 				--calculated-d2l-inner-knob-color: var(--d2l-inner-knob-color, var(--d2l-color-celestine));
@@ -61,6 +62,7 @@
 				height: calc(var(--knob-size-overflow) + var(--calculated-d2l-seek-bar-height) - 2px);
 				background-color: var(--calculated-d2l-outer-knob-color);
 				border: 1px solid var(--calculated-d2l-outer-knob-border-color);
+				box-shadow: var(--calculated-d2l-knob-box-shadow);
 				border-radius: 50%;
 			}
 
