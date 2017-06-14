@@ -214,7 +214,9 @@
 			_barDown: function(event) {
 				this._w = this.$.sliderBar.offsetWidth;
 				var rect = this.$.sliderBar.getBoundingClientRect();
-				var ratio = (event.detail.x - rect.left) / this._w;
+
+				var mousePosition = this.vertical ? rect.bottom - event.detail.y : event.detail.x - rect.left;
+				var ratio = mousePosition / this._w;
 
 				this._setDragging(true);
 				this._positionKnob(ratio);
