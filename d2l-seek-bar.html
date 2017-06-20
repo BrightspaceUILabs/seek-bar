@@ -14,8 +14,7 @@
 				--calculated-d2l-seek-bar-height: var(--d2l-seek-bar-height, 4px);
 				--calculated-d2l-knob-size: var(--d2l-knob-size, 32px);
 				--half-knob-size: calc(var(--calculated-d2l-knob-size)/2);
-				--half-knob-size-overflow: calc((var(--calculated-d2l-knob-size) / 2) - var(--calculated-d2l-seek-bar-height) / 2);
-				--knob-size-overflow: calc(((var(--calculated-d2l-knob-size) / 2) - var(--calculated-d2l-seek-bar-height) / 2) * 2);
+				--half-knob-size-overflow: calc((var(--calculated-d2l-knob-size) - var(--calculated-d2l-seek-bar-height)) / 2 - 1px);
 				--calculated-inner-knob-margin: var(--d2l-inner-knob-margin, 9px);
 				--calculated-d2l-knob-box-shadow: var(--d2l-knob-box-shadow, none);
 				--calculated-d2l-outer-knob-color: var(--d2l-outer-knob-color, var(--d2l-color-regolith));
