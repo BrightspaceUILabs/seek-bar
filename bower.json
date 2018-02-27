@@ -13,10 +13,11 @@
   "dependencies": {
     "d2l-colors": "^3.1.2",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^2.0.3",
-    "iron-range-behavior": "PolymerElements/iron-range-behavior#^2.1.0",
-    "polymer": "Polymer/polymer#^1.9.0"
+    "iron-range-behavior": "PolymerElements/iron-range-behavior#^2.0.0",
+    "polymer": "Polymer/polymer#^1.0.0"
   },
   "resolutions": {
-    "webcomponentsjs": "^0.7"
+    "webcomponentsjs": "^0.7",
+    "polymer": "Polymer/polymer#^1.0.0"
   }
 }
