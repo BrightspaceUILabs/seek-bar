@@ -4,7 +4,7 @@
   "description": "Polymer media seek bar component",
   "scripts": {
     "lint": "eslint *.html",
-    "postinstall": "bower install",
+    "postinstall": "polymer install --variants",
     "start": "polymer serve -p 9998",
     "test": "polymer test -l chrome",
     "posttest": "npm run lint"
@@ -16,10 +16,9 @@
   "author": "D2L",
   "license": "UNLICENSED",
   "devDependencies": {
-    "bower": "^1.7.7",
-    "eslint": "^3.7.1",
+    "eslint": "^3.19.0",
     "eslint-config-brightspace": "^0.2.4",
-    "eslint-plugin-html": "^1.5.3",
-    "polymer-cli": "^0.16.0"
+    "eslint-plugin-html": "^1.7.0",
+    "polymer-cli": "^1.6.0"
   }
 }

@@ -3,13 +3,19 @@
 <link rel="import" href="../d2l-colors/d2l-colors.html">
 <link rel="import" href="./d2l-progress.html">
 
+<!--
+`d2l-seek-bar`
+Polymer-based web component for a D2L seek-bar
+@demo demo/index.html
+-->
+
 <dom-module id="d2l-seek-bar">
 	<template strip-whitespace>
 		<style>
 			:host {
-				@apply(--layout);
-				@apply(--layout-justified);
-				@apply(--layout-center);
+				@apply --layout;
+				@apply --layout-justified;
+				@apply --layout-center;
 				display: block;
 				--calculated-d2l-seek-bar-height: var(--d2l-seek-bar-height, 4px);
 				--calculated-d2l-knob-size: var(--d2l-knob-size, 32px);
@@ -33,7 +39,7 @@
 			}
 
 			.bar-container {
-				@apply(--layout-fit);
+				@apply --layout-fit;
 				overflow: hidden;
 				cursor: pointer;
 			}
@@ -108,7 +114,8 @@
 				dragging: {
 					type: Boolean,
 					value: false,
-					readOnly: true
+					readOnly: true,
+					notify: true
 				},
 
 				vertical: {
@@ -139,9 +146,9 @@
 
 			_draggingChanged: function() {
 				if (this.dragging) {
-					this.fire('drag-start');
+					this.dispatchEvent(new CustomEvent('drag-start', { bubbles: true, composed: true }));
 				} else {
-					this.fire('drag-end');
+					this.dispatchEvent(new CustomEvent('drag-end', { bubbles: true, composed: true }));
 				}
 			},
 

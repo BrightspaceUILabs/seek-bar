@@ -1,0 +1,1185 @@
+{
+  "schema_version": "1.0.0",
+  "elements": [
+    {
+      "description": "",
+      "summary": "",
+      "path": "d2l-progress.html",
+      "properties": [
+        {
+          "name": "value",
+          "type": "number",
+          "description": "The number that represents the current value.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 27,
+              "column": 4
+            },
+            "end": {
+              "line": 32,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true
+            }
+          },
+          "defaultValue": "0",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "description": "The number that indicates the minimum value of the range.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 37,
+              "column": 4
+            },
+            "end": {
+              "line": 41,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true
+            }
+          },
+          "defaultValue": "0",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "description": "The number that indicates the maximum value of the range.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 46,
+              "column": 4
+            },
+            "end": {
+              "line": 50,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true
+            }
+          },
+          "defaultValue": "100",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "description": "Specifies the value granularity of the range's value.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 55,
+              "column": 4
+            },
+            "end": {
+              "line": 59,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true
+            }
+          },
+          "defaultValue": "1",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "ratio",
+          "type": "number",
+          "description": "Returns the ratio of the value.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 64,
+              "column": 4
+            },
+            "end": {
+              "line": 69,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "readOnly": true
+            }
+          },
+          "defaultValue": "0",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        }
+      ],
+      "methods": [
+        {
+          "name": "_calcRatio",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 76,
+              "column": 2
+            },
+            "end": {
+              "line": 78,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ],
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "_clampValue",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 80,
+              "column": 2
+            },
+            "end": {
+              "line": 82,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ],
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "_calcStep",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 84,
+              "column": 2
+            },
+            "end": {
+              "line": 106,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ],
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "_validateValue",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 108,
+              "column": 2
+            },
+            "end": {
+              "line": 112,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "_update",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 114,
+              "column": 2
+            },
+            "end": {
+              "line": 117,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "_transformProgress",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 49,
+              "column": 3
+            },
+            "end": {
+              "line": 52,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "progress"
+            },
+            {
+              "name": "ratio"
+            }
+          ]
+        },
+        {
+          "name": "_progressChanged",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 54,
+              "column": 3
+            },
+            "end": {
+              "line": 60,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ]
+        }
+      ],
+      "staticMethods": [],
+      "demos": [],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 38,
+          "column": 10
+        },
+        "end": {
+          "line": 61,
+          "column": 3
+        }
+      },
+      "privacy": "public",
+      "superclass": "HTMLElement",
+      "attributes": [
+        {
+          "name": "value",
+          "description": "The number that represents the current value.",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 27,
+              "column": 4
+            },
+            "end": {
+              "line": 32,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "min",
+          "description": "The number that indicates the minimum value of the range.",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 37,
+              "column": 4
+            },
+            "end": {
+              "line": 41,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "max",
+          "description": "The number that indicates the maximum value of the range.",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 46,
+              "column": 4
+            },
+            "end": {
+              "line": 50,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "step",
+          "description": "Specifies the value granularity of the range's value.",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 55,
+              "column": 4
+            },
+            "end": {
+              "line": 59,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "ratio",
+          "description": "Returns the ratio of the value.",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 64,
+              "column": 4
+            },
+            "end": {
+              "line": 69,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        }
+      ],
+      "events": [
+        {
+          "type": "CustomEvent",
+          "name": "value-changed",
+          "description": "Fired when the `value` property changes.",
+          "metadata": {},
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "min-changed",
+          "description": "Fired when the `min` property changes.",
+          "metadata": {},
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "max-changed",
+          "description": "Fired when the `max` property changes.",
+          "metadata": {},
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "step-changed",
+          "description": "Fired when the `step` property changes.",
+          "metadata": {},
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "ratio-changed",
+          "description": "Fired when the `ratio` property changes.",
+          "metadata": {},
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        }
+      ],
+      "styling": {
+        "cssVariables": [],
+        "selectors": []
+      },
+      "slots": [],
+      "tagname": "d2l-progress"
+    },
+    {
+      "description": "`d2l-seek-bar`\nPolymer-based web component for a D2L seek-bar",
+      "summary": "",
+      "path": "d2l-seek-bar.html",
+      "properties": [
+        {
+          "name": "value",
+          "type": "number",
+          "description": "The number that represents the current value.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 27,
+              "column": 4
+            },
+            "end": {
+              "line": 32,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true
+            }
+          },
+          "defaultValue": "0",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "description": "The number that indicates the minimum value of the range.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 37,
+              "column": 4
+            },
+            "end": {
+              "line": 41,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true
+            }
+          },
+          "defaultValue": "0",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "description": "The number that indicates the maximum value of the range.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 46,
+              "column": 4
+            },
+            "end": {
+              "line": 50,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true
+            }
+          },
+          "defaultValue": "100",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "description": "Specifies the value granularity of the range's value.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 55,
+              "column": 4
+            },
+            "end": {
+              "line": 59,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true
+            }
+          },
+          "defaultValue": "1",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "ratio",
+          "type": "number",
+          "description": "Returns the ratio of the value.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 64,
+              "column": 4
+            },
+            "end": {
+              "line": 69,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "readOnly": true
+            }
+          },
+          "defaultValue": "0",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "immediateValue",
+          "type": "number",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 106,
+              "column": 4
+            },
+            "end": {
+              "line": 111,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "readOnly": true
+            }
+          },
+          "defaultValue": "0"
+        },
+        {
+          "name": "dragging",
+          "type": "boolean",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 113,
+              "column": 4
+            },
+            "end": {
+              "line": 118,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "readOnly": true
+            }
+          },
+          "defaultValue": "false"
+        },
+        {
+          "name": "vertical",
+          "type": "boolean",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "start": {
+              "line": 120,
+              "column": 4
+            },
+            "end": {
+              "line": 123,
+              "column": 5
+            }
+          },
+          "metadata": {
+            "polymer": {}
+          },
+          "defaultValue": "false"
+        }
+      ],
+      "methods": [
+        {
+          "name": "_calcRatio",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 76,
+              "column": 2
+            },
+            "end": {
+              "line": 78,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ],
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "_clampValue",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 80,
+              "column": 2
+            },
+            "end": {
+              "line": 82,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ],
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "_calcStep",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 84,
+              "column": 2
+            },
+            "end": {
+              "line": 106,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ],
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "_validateValue",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 108,
+              "column": 2
+            },
+            "end": {
+              "line": 112,
+              "column": 3
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "_update",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 132,
+              "column": 3
+            },
+            "end": {
+              "line": 134,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_updateKnob",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 136,
+              "column": 3
+            },
+            "end": {
+              "line": 138,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "value"
+            }
+          ]
+        },
+        {
+          "name": "_immediateValueChanged",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 140,
+              "column": 3
+            },
+            "end": {
+              "line": 144,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_draggingChanged",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 146,
+              "column": 3
+            },
+            "end": {
+              "line": 152,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_positionKnob",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 154,
+              "column": 3
+            },
+            "end": {
+              "line": 163,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "ratio"
+            }
+          ]
+        },
+        {
+          "name": "_knobDown",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 165,
+              "column": 3
+            },
+            "end": {
+              "line": 168,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "event"
+            }
+          ]
+        },
+        {
+          "name": "_onTrack",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 170,
+              "column": 3
+            },
+            "end": {
+              "line": 184,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "event"
+            }
+          ]
+        },
+        {
+          "name": "_trackStart",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 186,
+              "column": 3
+            },
+            "end": {
+              "line": 194,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_track",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 196,
+              "column": 3
+            },
+            "end": {
+              "line": 210,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "event"
+            }
+          ]
+        },
+        {
+          "name": "_trackEnd",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 212,
+              "column": 3
+            },
+            "end": {
+              "line": 219,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_barDown",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 221,
+              "column": 3
+            },
+            "end": {
+              "line": 233,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "event"
+            }
+          ]
+        },
+        {
+          "name": "_barUp",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 235,
+              "column": 3
+            },
+            "end": {
+              "line": 237,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": []
+        },
+        {
+          "name": "_calcKnobPosition",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 239,
+              "column": 3
+            },
+            "end": {
+              "line": 241,
+              "column": 4
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "ratio"
+            }
+          ]
+        }
+      ],
+      "staticMethods": [],
+      "demos": [
+        {
+          "url": "demo/index.html",
+          "description": ""
+        }
+      ],
+      "metadata": {},
+      "sourceRange": {
+        "start": {
+          "line": 98,
+          "column": 10
+        },
+        "end": {
+          "line": 242,
+          "column": 3
+        }
+      },
+      "privacy": "public",
+      "superclass": "HTMLElement",
+      "attributes": [
+        {
+          "name": "value",
+          "description": "The number that represents the current value.",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 27,
+              "column": 4
+            },
+            "end": {
+              "line": 32,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "min",
+          "description": "The number that indicates the minimum value of the range.",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 37,
+              "column": 4
+            },
+            "end": {
+              "line": 41,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "max",
+          "description": "The number that indicates the maximum value of the range.",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 46,
+              "column": 4
+            },
+            "end": {
+              "line": 50,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "step",
+          "description": "Specifies the value granularity of the range's value.",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 55,
+              "column": 4
+            },
+            "end": {
+              "line": 59,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "ratio",
+          "description": "Returns the ratio of the value.",
+          "sourceRange": {
+            "file": "bower_components/iron-range-behavior/iron-range-behavior.html",
+            "start": {
+              "line": 64,
+              "column": 4
+            },
+            "end": {
+              "line": 69,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "number",
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "name": "immediate-value",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 106,
+              "column": 4
+            },
+            "end": {
+              "line": 111,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "number"
+        },
+        {
+          "name": "dragging",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 113,
+              "column": 4
+            },
+            "end": {
+              "line": 118,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "boolean"
+        },
+        {
+          "name": "vertical",
+          "description": "",
+          "sourceRange": {
+            "start": {
+              "line": 120,
+              "column": 4
+            },
+            "end": {
+              "line": 123,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "type": "boolean"
+        }
+      ],
+      "events": [
+        {
+          "type": "CustomEvent",
+          "name": "value-changed",
+          "description": "Fired when the `value` property changes.",
+          "metadata": {},
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "min-changed",
+          "description": "Fired when the `min` property changes.",
+          "metadata": {},
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "max-changed",
+          "description": "Fired when the `max` property changes.",
+          "metadata": {},
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "step-changed",
+          "description": "Fired when the `step` property changes.",
+          "metadata": {},
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "ratio-changed",
+          "description": "Fired when the `ratio` property changes.",
+          "metadata": {},
+          "inheritedFrom": "Polymer.IronRangeBehavior"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "immediate-value-changed",
+          "description": "Fired when the `immediateValue` property changes.",
+          "metadata": {}
+        },
+        {
+          "type": "CustomEvent",
+          "name": "dragging-changed",
+          "description": "Fired when the `dragging` property changes.",
+          "metadata": {}
+        }
+      ],
+      "styling": {
+        "cssVariables": [],
+        "selectors": []
+      },
+      "slots": [],
+      "tagname": "d2l-seek-bar"
+    }
+  ]
+}
