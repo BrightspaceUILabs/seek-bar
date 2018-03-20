@@ -21,6 +21,9 @@
     "iron-component-page": "^3.0.1",
     "iron-demo-helpers": "^2.1.0"
   },
+  "resolutions": {
+    "webcomponentsjs": "v1.0.19"
+  },
   "variants": {
     "1.x": {
       "dependencies": {
