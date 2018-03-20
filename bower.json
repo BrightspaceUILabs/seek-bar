@@ -1,6 +1,6 @@
 {
   "name": "d2l-seek-bar",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/Brightspace/d2l-seek-bar",
   "license": "UNLICENSED",
   "ignore": [
@@ -11,9 +11,27 @@
     "tests"
   ],
   "dependencies": {
-    "d2l-colors": "^2.2.3",
-    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0",
-    "iron-range-behavior": "PolymerElements/iron-range-behavior#^1.0.0",
-    "polymer": "Polymer/polymer#^1.0.0"
+    "d2l-colors": "^3.1.2",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^2.0.3",
+    "iron-range-behavior": "PolymerElements/iron-range-behavior#^2.1.0",
+    "polymer": "Polymer/polymer#^2.5.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "^6.5.0",
+    "iron-component-page": "^3.0.1",
+    "iron-demo-helpers": "^2.1.0"
+  },
+  "resolutions": {
+    "webcomponentsjs": "v1.0.19"
+  },
+  "variants": {
+    "1.x": {
+      "dependencies": {
+        "d2l-colors": "^2.4.0",
+        "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0",
+        "iron-range-behavior": "PolymerElements/iron-range-behavior#^1.0.0",
+        "polymer": "Polymer/polymer#^1.11.3"
+      }
+    }
   }
 }

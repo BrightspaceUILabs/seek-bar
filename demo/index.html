@@ -1,12 +1,6 @@
 <!doctype html>
 <html>
   <head>
-		<style>
-			d2l-seek-bar {
-				width: 200px;
-				display: inline-block;
-			}
-		</style>
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script>
       /*
@@ -14,9 +8,63 @@
       window.Polymer.dom = 'shadow';
       */
     </script>
+		<link rel="import" href="../../polymer/lib/elements/dom-bind.html">
+		<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+		<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
     <link rel="import" href="../d2l-seek-bar.html">
+
+		<custom-style>
+			<style is="custom-style" include="demo-pages-shared-styles">
+				d2l-seek-bar {
+					width: 200px;
+					display: inline-block;
+				}
+			</style>
+		</custom-style>
   </head>
   <body>
-		<d2l-seek-bar value="40"></d2l-seek-bar>
+		<h1>d2l-seek-bar</h1>
+		<h2>Seek bar with static value</h2>
+		<demo-snippet>
+			<template>
+				<d2l-seek-bar value="60"></d2l-seek-bar>
+			</template>
+		</demo-snippet>
+		<h2>Seek bar with bound value</h2>
+		<demo-snippet>
+			<template>
+				<dom-bind>
+					<template>
+						<d2l-seek-bar value="{{seekBarValue}}"></d2l-seek-bar>
+						<input type="number" value="{{seekBarValue::input}}">
+					</template>
+				</dom-bind>
+			</template>
+		</demo-snippet>
+		<h2>Seek bar with max/min</h2>
+		<demo-snippet>
+			<template>
+				<dom-bind>
+					<template>
+						<d2l-seek-bar
+							dragging="{{seekBarDragging}}"
+							immediate-value="{{seekBarImmediateValue}}"
+							max="{{seekBarMax}}"
+							min="{{seekBarMin}}"
+							ratio="{{seekBarRatio}}"
+							step="{{seekBarStep}}"
+							value="{{seekBarValue}}"
+						></d2l-seek-bar><br/>
+						<label>Dragging <input value="{{seekBarDragging}}" readonly></label><br/>
+						<label>Immediate Value <input type="number" value="{{seekBarImmediateValue}}" readonly></label><br/>
+						<label>Max <input type="number" value="{{seekBarMax::input}}"></label><br/>
+						<label>Min <input type="number" value="{{seekBarMin::input}}"></label><br/>
+						<label>Ratio <input type="number" value="{{seekBarRatio::input}}"></label><br/>
+						<label>Step <input type="number" value="{{seekBarStep::input}}"></label><br/>
+						<label>Value <input type="number" value="{{seekBarValue::input}}"></label><br/>
+					</template>
+				</dom-bind>
+			</template>
+		</demo-snippet>
   </body>
 </html>
