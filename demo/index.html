@@ -34,7 +34,7 @@
 		<demo-snippet>
 			<template>
 				<dom-bind>
-					<template>
+					<template is="dom-bind">
 						<d2l-seek-bar value="{{seekBarValue}}"></d2l-seek-bar>
 						<input type="number" value="{{seekBarValue::input}}">
 					</template>
@@ -45,7 +45,7 @@
 		<demo-snippet>
 			<template>
 				<dom-bind>
-					<template>
+					<template is="dom-bind">
 						<d2l-seek-bar
 							dragging="{{seekBarDragging}}"
 							immediate-value="{{seekBarImmediateValue}}"
