@@ -5,7 +5,7 @@ import '../../d2l-colors/d2l-colors.js';
 import { Polymer } from '../../@polymer/polymer/lib/legacy/polymer-fn.js';
 import { html } from '../../@polymer/polymer/lib/utils/html-tag.js';
 Polymer({
-  _template: html`
+	_template: html`
 		<style is="custom-style" include="iron-positioning">
 			:host {
 				display: block;
@@ -36,26 +36,26 @@ Polymer({
 		</div>
 `,
 
-  is: 'd2l-progress',
+	is: 'd2l-progress',
 
-  behaviors: [
-	  IronRangeBehavior
-  ],
+	behaviors: [
+		IronRangeBehavior
+	],
 
-  observers: [
-	  '_progressChanged(value, min, max)'
-  ],
+	observers: [
+		'_progressChanged(value, min, max)'
+	],
 
-  _transformProgress: function(progress, ratio) {
-	  var transform = ratio + '%';
-	  progress.style.width = transform;
-  },
+	_transformProgress: function(progress, ratio) {
+		var transform = ratio + '%';
+		progress.style.width = transform;
+	},
 
-  _progressChanged: function(value) {
-	  value = this._clampValue(value);
+	_progressChanged: function(value) {
+		value = this._clampValue(value);
 
-	  var mainRatio = this._calcRatio(value) * 100;
+		var mainRatio = this._calcRatio(value) * 100;
 
-	  this._transformProgress(this.$.primaryProgress, mainRatio);
-  }
+		this._transformProgress(this.$.primaryProgress, mainRatio);
+	}
 });

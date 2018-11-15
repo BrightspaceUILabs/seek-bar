@@ -1,17 +1,17 @@
 <!doctype html>
 <html>
   <head>
-	<script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-	<script type="module">
-import '../../../@polymer/polymer/lib/elements/dom-bind.js';
-import '../../../@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
-import '../../../@polymer/iron-demo-helpers/demo-snippet.js';
-import '../d2l-seek-bar.js';
-</script>
+		<script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+		<script type="module">
+			import '../../../@polymer/polymer/lib/elements/dom-bind.js';
+			import '../../../@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
+			import '../../../@polymer/iron-demo-helpers/demo-snippet.js';
+			import '../d2l-seek-bar.js';
+		</script>
 		<script type="module" src="../../../@polymer/polymer/lib/elements/dom-bind.js"></script>
 		<script type="module" src="../../../@polymer/iron-demo-helpers/demo-pages-shared-styles.js"></script>
 		<script type="module" src="../../../@polymer/iron-demo-helpers/demo-snippet.js"></script>
-	<script type="module" src="../d2l-seek-bar.js"></script>
+		<script type="module" src="../d2l-seek-bar.js"></script>
 
 		<!-- FIXME(polymer-modulizer):
 		These imperative modules that innerHTML your HTML are
@@ -21,10 +21,10 @@ import '../d2l-seek-bar.js';
 		able to expand the underlying CSS custom properties.
 		See: https://github.com/Polymer/polymer-modulizer/issues/154
 		-->
-	<script type="module">
-const $_documentContainer = document.createElement('template');
+		<script type="module">
+			const $_documentContainer = document.createElement('template');
 
-$_documentContainer.innerHTML = `<custom-style>
+			$_documentContainer.innerHTML = `<custom-style>
 			<style is="custom-style" include="demo-pages-shared-styles">
 				d2l-seek-bar {
 					width: 200px;
@@ -33,40 +33,40 @@ $_documentContainer.innerHTML = `<custom-style>
 			</style>
 		</custom-style>`;
 
-document.body.appendChild($_documentContainer.content);
-</script>
+			document.body.appendChild($_documentContainer.content);
+		</script>
   </head>
   <body>
 		<script type="module">
-const $_documentContainer = document.createElement('template');
-$_documentContainer.innerHTML = `<h1>d2l-seek-bar</h1>`;
-document.body.appendChild($_documentContainer.content);
-</script>
+			const $_documentContainer = document.createElement('template');
+			$_documentContainer.innerHTML = '<h1>d2l-seek-bar</h1>';
+			document.body.appendChild($_documentContainer.content);
+		</script>
 		<script type="module">
-const $_documentContainer = document.createElement('template');
-$_documentContainer.innerHTML = `<h2>Seek bar with static value</h2>`;
-document.body.appendChild($_documentContainer.content);
-</script>
+			const $_documentContainer = document.createElement('template');
+			$_documentContainer.innerHTML = '<h2>Seek bar with static value</h2>';
+			document.body.appendChild($_documentContainer.content);
+		</script>
 		<script type="module">
-const $_documentContainer = document.createElement('template');
+			const $_documentContainer = document.createElement('template');
 
-$_documentContainer.innerHTML = `<demo-snippet>
+			$_documentContainer.innerHTML = `<demo-snippet>
 			<template>
 				<d2l-seek-bar value="60"></d2l-seek-bar>
 			</template>
 		</demo-snippet>`;
 
-document.body.appendChild($_documentContainer.content);
-</script>
+			document.body.appendChild($_documentContainer.content);
+		</script>
 		<script type="module">
-const $_documentContainer = document.createElement('template');
-$_documentContainer.innerHTML = `<h2>Seek bar with bound value</h2>`;
-document.body.appendChild($_documentContainer.content);
-</script>
+			const $_documentContainer = document.createElement('template');
+			$_documentContainer.innerHTML = '<h2>Seek bar with bound value</h2>';
+			document.body.appendChild($_documentContainer.content);
+		</script>
 		<script type="module">
-const $_documentContainer = document.createElement('template');
+			const $_documentContainer = document.createElement('template');
 
-$_documentContainer.innerHTML = `<demo-snippet>
+			$_documentContainer.innerHTML = `<demo-snippet>
 			<template>
 				<dom-bind>
 					<template is="dom-bind">
@@ -77,17 +77,17 @@ $_documentContainer.innerHTML = `<demo-snippet>
 			</template>
 		</demo-snippet>`;
 
-document.body.appendChild($_documentContainer.content);
-</script>
+			document.body.appendChild($_documentContainer.content);
+		</script>
 		<script type="module">
-const $_documentContainer = document.createElement('template');
-$_documentContainer.innerHTML = `<h2>Seek bar with max/min</h2>`;
-document.body.appendChild($_documentContainer.content);
-</script>
+			const $_documentContainer = document.createElement('template');
+			$_documentContainer.innerHTML = '<h2>Seek bar with max/min</h2>';
+			document.body.appendChild($_documentContainer.content);
+		</script>
 		<script type="module">
-const $_documentContainer = document.createElement('template');
+			const $_documentContainer = document.createElement('template');
 
-$_documentContainer.innerHTML = `<demo-snippet>
+			$_documentContainer.innerHTML = `<demo-snippet>
 			<template>
 				<dom-bind>
 					<template is="dom-bind">
@@ -104,7 +104,7 @@ $_documentContainer.innerHTML = `<demo-snippet>
 			</template>
 		</demo-snippet>`;
 
-document.body.appendChild($_documentContainer.content);
-</script>
+			document.body.appendChild($_documentContainer.content);
+		</script>
   </body>
 </html>
