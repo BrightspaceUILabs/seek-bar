@@ -3,11 +3,6 @@
 Polymer-based web component for a D2L seek-bar
 @demo demo/index.html
 */
-/*
-  FIXME(polymer-modulizer): the above comments were extracted
-  from HTML and may be out of place here. Review them and
-  then delete this comment!
-*/
 import '../../@polymer/polymer/polymer-legacy.js';
 
 import { IronRangeBehavior } from '../../@polymer/iron-range-behavior/iron-range-behavior.js';
@@ -102,7 +97,6 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 		</div>
 	</template>
 
-	
 </dom-module>`;
 
 document.head.appendChild($_documentContainer.content);
