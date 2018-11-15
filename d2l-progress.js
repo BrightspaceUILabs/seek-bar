@@ -3,9 +3,10 @@ import '../../@polymer/iron-flex-layout/iron-flex-layout-classes.js';
 import { IronRangeBehavior } from '../../@polymer/iron-range-behavior/iron-range-behavior.js';
 import '../../d2l-colors/d2l-colors.js';
 import { Polymer } from '../../@polymer/polymer/lib/legacy/polymer-fn.js';
-import { html } from '../../@polymer/polymer/lib/utils/html-tag.js';
-Polymer({
-	_template: html`
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<dom-module id="d2l-progress">
+	<template strip-whitespace="">
 		<style is="custom-style" include="iron-positioning">
 			:host {
 				display: block;
@@ -34,8 +35,13 @@ Polymer({
 		<div id="progressContainer">
 			<div id="primaryProgress" class="fit"></div>
 		</div>
-`,
+	</template>
 
+
+</dom-module>`;
+
+document.head.appendChild($_documentContainer.content);
+Polymer({
 	is: 'd2l-progress',
 
 	behaviors: [
