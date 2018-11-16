@@ -11,10 +11,6 @@ jobs:
       - restore_cache:
           key: v1-package-{{ checksum "package.json" }}
 
-      - run:
-          name: Authenticate with Artifactory
-          command: curl -ks -u$ARTIFACTORY_USER:$ARTIFACTORY_PASS "https://d2lartifacts.artifactoryonline.com/d2lartifacts/api/npm/npm-local/auth/d2l" -o ~/project/.npmrc
-
       - run: npm install
       - run: npm test
 
@@ -34,7 +30,9 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/project
-
+      - run:
+          name: Authenticate with Artifactory
+          command: curl -ks -u$ARTIFACTORY_USER:$ARTIFACTORY_PASS "https://d2lartifacts.artifactoryonline.com/d2lartifacts/api/npm/npm-local/auth/d2l" -o ~/project/.npmrc
       - run:
           command: |
             npm install publish
