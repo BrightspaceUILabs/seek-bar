@@ -1,8 +1,8 @@
-import '../../@polymer/polymer/polymer-legacy.js';
-import '../../@polymer/iron-flex-layout/iron-flex-layout-classes.js';
-import { IronRangeBehavior } from '../../@polymer/iron-range-behavior/iron-range-behavior.js';
-import '../../d2l-colors/d2l-colors.js';
-import { Polymer } from '../../@polymer/polymer/lib/legacy/polymer-fn.js';
+import '@polymer/polymer/polymer-legacy.js';
+import '@polymer/iron-flex-layout/iron-flex-layout-classes.js';
+import { IronRangeBehavior } from '@polymer/iron-range-behavior/iron-range-behavior.js';
+import 'd2l-colors/d2l-colors.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
 const $_documentContainer = document.createElement('template');
 
 $_documentContainer.innerHTML = `<dom-module id="d2l-progress">
