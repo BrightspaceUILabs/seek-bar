@@ -35,8 +35,8 @@ jobs:
           command: curl -ks -u$ARTIFACTORY_USER:$ARTIFACTORY_PASS "https://d2lartifacts.artifactoryonline.com/d2lartifacts/api/npm/npm-local/auth/d2l" -o ~/project/.npmrc
       - run:
           command: |
-            npm install publish
-            ./node_modules/.bin/publish
+            sudo npm install -g publish
+            publish
 
 workflows:
   version: 2
