@@ -149,34 +149,18 @@ Polymer({
 
 	_onKeyPress: function(event) {
 		if (this.vertical) {
-			event.preventDefault();
-			if (event.detail.key === 'up') {
-				this._setImmediateValue(this.immediateValue + 5);
-			}
-			else if (event.detail.key === 'down') {
-				this._setImmediateValue(this.immediateValue - 5);
-			}
-		}
-		else {
-			if (event.detail.key === 'right') {
-				this._setImmediateValue(this.immediateValue + 5);
-			}
-			else if (event.detail.key === 'left') {
-				this._setImmediateValue(this.immediateValue - 5);
-			}
-		}
-	},
-	_onLeft: function(e) {
-		if (!this.vertical) {
-			e.preventDefault();
-			this._setImmediateValue(this.immediateValue - 5);
+			this._checkKey(event, 'up', 5);
+			this._checkKey(event, 'down', -5);
+		} else {
+			this._checkKey(event, 'right', 5);
+			this._checkKey(event, 'left', -5);
 		}
 	},
 
-	_onRight: function(e) {
-		if (!this.vertical) {
-			e.preventDefault();
-			this._setImmediateValue(this.immediateValue + 5);
+	_checkKey(event, key, valueChange) {
+		if (event.detail.key === key) {
+			event.preventDefault();
+			this._setImmediateValue(this.immediateValue + valueChange);
 		}
 	},
 
