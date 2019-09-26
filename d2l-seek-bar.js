@@ -6,6 +6,7 @@ Polymer-based web component for a D2L seek-bar
 import '@polymer/polymer/polymer-legacy.js';
 
 import { IronRangeBehavior } from '@polymer/iron-range-behavior/iron-range-behavior.js';
+import { IronA11yKeysBehavior } from '@polymer/iron-a11y-keys-behavior/iron-a11y-keys-behavior.js';
 import 'd2l-colors/d2l-colors.js';
 import './d2l-progress.js';
 import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
@@ -31,6 +32,10 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				--calculated-d2l-progress-border-color: var(--d2l-progress-border-color, var(--d2l-color-pressicus));
 				--calculated-d2l-progress-shadow-color: var(--d2l-progress-shadow-color, #dadee3);
 				--calculated-d2l-progress-background-color: var(--d2l-progress-background-color, var(--d2l-color-gypsum));
+			}
+
+			host:focus {
+				background: green;
 			}
 
 			#sliderContainer {
@@ -104,7 +109,8 @@ Polymer({
 	is: 'd2l-seek-bar',
 
 	behaviors: [
-		IronRangeBehavior
+		IronRangeBehavior,
+		IronA11yKeysBehavior
 	],
 
 	properties: {
@@ -125,7 +131,18 @@ Polymer({
 		vertical: {
 			type: Boolean,
 			value: false
-		}
+		},
+	},
+
+	hostAttributes: {
+		tabindex: 0
+	},
+
+	keyBindings: {
+		'up': '_onUp',
+		'down': '_onDown',
+		'left': '_onLeft',
+		'right': '_onRight'
 	},
 
 	observers: [
@@ -133,6 +150,34 @@ Polymer({
 		'_immediateValueChanged(immediateValue)',
 		'_draggingChanged(dragging)'
 	],
+
+	_onUp: function(e) {
+		if (this.vertical) {
+			e.preventDefault();
+			this._setImmediateValue(this.immediateValue + 5);
+		}
+	},
+
+	_onDown: function(e) {
+		if (this.vertical) {
+			e.preventDefault();
+			this._setImmediateValue(this.immediateValue - 5);
+		}
+	},
+
+	_onLeft: function(e) {
+		if (!this.vertical) {
+			e.preventDefault();
+			this._setImmediateValue(this.immediateValue - 5);
+		}
+	},
+
+	_onRight: function(e) {
+		if (!this.vertical) {
+			e.preventDefault();
+			this._setImmediateValue(this.immediateValue + 5);
+		}
+	},
 
 	_update: function() {
 		this._setRatio(this._calcRatio(this.value));
@@ -174,7 +219,6 @@ Polymer({
 
 	_onTrack: function(event) {
 		event.stopPropagation();
-
 		switch (event.detail.state) {
 			case 'start':
 				this._trackStart(event);
