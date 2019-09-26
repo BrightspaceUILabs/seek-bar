@@ -34,10 +34,6 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				--calculated-d2l-progress-background-color: var(--d2l-progress-background-color, var(--d2l-color-gypsum));
 			}
 
-			host:focus {
-				background: green;
-			}
-
 			#sliderContainer {
 				position: relative;
 				height: var(--calculated-d2l-knob-size);
