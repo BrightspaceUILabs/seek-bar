@@ -135,10 +135,10 @@ Polymer({
 	},
 
 	keyBindings: {
-		'up': '_onUp',
-		'down': '_onDown',
-		'left': '_onLeft',
-		'right': '_onRight'
+		'up': '_onKeyPress',
+		'down': '_onKeyPress',
+		'left': '_onKeyPress',
+		'right': '_onKeyPress'
 	},
 
 	observers: [
@@ -147,20 +147,25 @@ Polymer({
 		'_draggingChanged(dragging)'
 	],
 
-	_onUp: function(e) {
+	_onKeyPress: function(event) {
 		if (this.vertical) {
-			e.preventDefault();
-			this._setImmediateValue(this.immediateValue + 5);
+			event.preventDefault();
+			if (event.detail.key === 'up') {
+				this._setImmediateValue(this.immediateValue + 5);
+			}
+			else if (event.detail.key === 'down') {
+				this._setImmediateValue(this.immediateValue - 5);
+			}
+		}
+		else {
+			if (event.detail.key === 'right') {
+				this._setImmediateValue(this.immediateValue + 5);
+			}
+			else if (event.detail.key === 'left') {
+				this._setImmediateValue(this.immediateValue - 5);
+			}
 		}
 	},
-
-	_onDown: function(e) {
-		if (this.vertical) {
-			e.preventDefault();
-			this._setImmediateValue(this.immediateValue - 5);
-		}
-	},
-
 	_onLeft: function(e) {
 		if (!this.vertical) {
 			e.preventDefault();
