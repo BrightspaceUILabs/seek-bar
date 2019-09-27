@@ -6,6 +6,7 @@ Polymer-based web component for a D2L seek-bar
 import '@polymer/polymer/polymer-legacy.js';
 
 import { IronRangeBehavior } from '@polymer/iron-range-behavior/iron-range-behavior.js';
+import { IronA11yKeysBehavior } from '@polymer/iron-a11y-keys-behavior/iron-a11y-keys-behavior.js';
 import 'd2l-colors/d2l-colors.js';
 import './d2l-progress.js';
 import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
@@ -104,7 +105,8 @@ Polymer({
 	is: 'd2l-seek-bar',
 
 	behaviors: [
-		IronRangeBehavior
+		IronRangeBehavior,
+		IronA11yKeysBehavior
 	],
 
 	properties: {
@@ -125,7 +127,18 @@ Polymer({
 		vertical: {
 			type: Boolean,
 			value: false
-		}
+		},
+	},
+
+	hostAttributes: {
+		tabindex: 0
+	},
+
+	keyBindings: {
+		'up': '_onKeyPress',
+		'down': '_onKeyPress',
+		'left': '_onKeyPress',
+		'right': '_onKeyPress'
 	},
 
 	observers: [
@@ -133,6 +146,23 @@ Polymer({
 		'_immediateValueChanged(immediateValue)',
 		'_draggingChanged(dragging)'
 	],
+
+	_onKeyPress: function(event) {
+		if (this.vertical) {
+			this._checkKey(event, 'up', 5);
+			this._checkKey(event, 'down', -5);
+		} else {
+			this._checkKey(event, 'right', 5);
+			this._checkKey(event, 'left', -5);
+		}
+	},
+
+	_checkKey(event, key, valueChange) {
+		if (event.detail.key === key) {
+			event.preventDefault();
+			this._setImmediateValue(this.immediateValue + valueChange);
+		}
+	},
 
 	_update: function() {
 		this._setRatio(this._calcRatio(this.value));
@@ -174,7 +204,6 @@ Polymer({
 
 	_onTrack: function(event) {
 		event.stopPropagation();
-
 		switch (event.detail.state) {
 			case 'start':
 				this._trackStart(event);

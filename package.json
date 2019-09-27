@@ -39,6 +39,7 @@
     "d2l-colors": "BrightspaceUI/colors#semver:^4",
     "@polymer/iron-flex-layout": "^3.0.0-pre.18",
     "@polymer/iron-range-behavior": "^3.0.0-pre.18",
+    "@polymer/iron-a11y-keys-behavior": "^3.0.0-pre.18",
     "@polymer/polymer": "^3.0.0"
   }
 }
