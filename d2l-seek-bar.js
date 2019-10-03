@@ -161,6 +161,7 @@ Polymer({
 		if (event.detail.key === key) {
 			event.preventDefault();
 			this._setImmediateValue(this.immediateValue + valueChange);
+			this.dispatchEvent(new CustomEvent('position-change', { bubbles: true, composed: true }));
 		}
 	},
 
