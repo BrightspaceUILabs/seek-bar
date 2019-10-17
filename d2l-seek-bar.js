@@ -46,10 +46,6 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				margin-right: var(--half-knob-size);
 			}
 
-			div:focus #sliderContainer {
-				outline: 2px solid black;
-			}
-
 			.bar-container {
 				@apply --layout-fit;
 				overflow: hidden;
