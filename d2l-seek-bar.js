@@ -34,11 +34,20 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				--calculated-d2l-progress-background-color: var(--d2l-progress-background-color, var(--d2l-color-gypsum));
 			}
 
+			:host(:focus) {
+				background: var(--d2l-color-regolith);
+				outline: 2px solid var(--d2l-color-celestine);
+			}
+
 			#sliderContainer {
 				position: relative;
 				height: var(--calculated-d2l-knob-size);
 				margin-left: var(--half-knob-size);
 				margin-right: var(--half-knob-size);
+			}
+
+			div:focus #sliderContainer {
+				outline: 2px solid black;
 			}
 
 			.bar-container {
