@@ -136,7 +136,8 @@ Polymer({
 	},
 
 	hostAttributes: {
-		tabindex: 0
+		tabindex: 0,
+		role: 'slider'
 	},
 
 	keyBindings: {
