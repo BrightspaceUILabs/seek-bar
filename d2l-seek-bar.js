@@ -32,10 +32,17 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				--calculated-d2l-progress-border-color: var(--d2l-progress-border-color, var(--d2l-color-pressicus));
 				--calculated-d2l-progress-shadow-color: var(--d2l-progress-shadow-color, #dadee3);
 				--calculated-d2l-progress-background-color: var(--d2l-progress-background-color, var(--d2l-color-gypsum));
+				--calculated-d2l-progress-active-color: var(--d2l-progress-active-color, var(--d2l-color-gypsum));
 			}
 
 			:host(:focus) {
-				background: var(--d2l-color-regolith);
+				outline: none;
+				/* background: var(--d2l-color-regolith); */
+				/* outline: 2px solid var(--d2l-color-celestine); */
+			}
+
+			:host(:focus) .slider-knob {
+				/* outline: 2px solid white; */
 				outline: 2px solid var(--d2l-color-celestine);
 			}
 
@@ -64,7 +71,7 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 					box-shadow: inset 0 1px 0 0 var(--calculated-d2l-progress-shadow-color);
 				}
 				--d2l-progress-container-color: var(--calculated-d2l-progress-background-color);
-				--d2l-progress-active-color: transparent;
+				--d2l-progress-active-color: var(--calculated-d2l-progress-active-color);
 			}
 
 			.slider-knob {
