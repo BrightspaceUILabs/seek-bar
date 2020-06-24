@@ -30,6 +30,7 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				--calculated-d2l-outer-knob-border-color: var(--d2l-outer-knob-border-color, var(--d2l-color-pressicus));
 				--calculated-d2l-inner-knob-color: var(--d2l-inner-knob-color, var(--d2l-color-celestine));
 				--calculated-d2l-progress-border-color: var(--d2l-progress-border-color, var(--d2l-color-pressicus));
+				--calculated-d2l-progress-border-radius: var(--d2l-progress-border-radius, 4px);
 				--calculated-d2l-progress-shadow-color: var(--d2l-progress-shadow-color, #dadee3);
 				--calculated-d2l-progress-background-color: var(--d2l-progress-background-color, var(--d2l-color-gypsum));
 				--calculated-d2l-progress-active-color: var(--d2l-progress-active-color, var(--d2l-color-gypsum));
@@ -72,7 +73,7 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				}
 				--d2l-progress-container: {
 					border: 1px solid var(--calculated-d2l-progress-border-color);
-					border-radius: 4px;
+					border-radius: var(--calculated-d2l-progress-border-radius);
 					box-shadow: inset 0 1px 0 0 var(--calculated-d2l-progress-shadow-color);
 				}
 				--d2l-progress-container-color: var(--calculated-d2l-progress-background-color);
