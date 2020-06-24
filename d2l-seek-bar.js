@@ -53,6 +53,11 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				margin-right: var(--half-knob-size);
 			}
 
+			:host([fullWidth]) #sliderContainer {
+				margin-left: 0;
+				margin-right: 0;
+			}
+
 			.bar-container {
 				@apply --layout-fit;
 				overflow: hidden;
@@ -100,7 +105,7 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 
 		</style>
 
-		<div id="sliderContainer">
+		<div id="sliderContainer" fullWidth$="{{fullWidth}}">
 			<div class="bar-container">
 				<d2l-progress id="sliderBar" value="{{immediateValue}}" on-down="_barDown" on-up="_barUp" on-track="_onTrack"></d2l-progress>
 			</div>
@@ -140,6 +145,11 @@ Polymer({
 			type: Boolean,
 			value: false
 		},
+
+		fullWidth: {
+			type: Boolean,
+			value: false
+		}
 	},
 
 	hostAttributes: {
