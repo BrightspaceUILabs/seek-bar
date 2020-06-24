@@ -38,13 +38,10 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 
 			:host(:focus) {
 				outline: none;
-				/* background: var(--d2l-color-regolith); */
-				/* outline: 2px solid var(--d2l-color-celestine); */
 			}
 
 			:host(:focus) .slider-knob {
-				/* outline: 2px solid white; */
-				outline: 2px solid var(--d2l-color-celestine);
+				outline: 2px solid white;
 			}
 
 			#sliderContainer {
