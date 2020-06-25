@@ -24,24 +24,37 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				--calculated-d2l-knob-size: var(--d2l-knob-size, 32px);
 				--half-knob-size: calc(var(--calculated-d2l-knob-size)/2);
 				--half-knob-size-overflow: calc((var(--calculated-d2l-knob-size) - var(--calculated-d2l-seek-bar-height)) / 2 - 1px);
-				--calculated-inner-knob-margin: var(--d2l-inner-knob-margin, 9px);
-				--calculated-d2l-knob-box-shadow: var(--d2l-knob-box-shadow, none);
+				--calculated-inner-knob-margin: var(--d2l-inner-knob-margin, 8px);
+				--calculated-d2l-knob-box-shadow: var(--d2l-knob-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.52));
 				--calculated-d2l-outer-knob-color: var(--d2l-outer-knob-color, var(--d2l-color-regolith));
 				--calculated-d2l-outer-knob-border-color: var(--d2l-outer-knob-border-color, var(--d2l-color-pressicus));
-				--calculated-d2l-inner-knob-color: var(--d2l-inner-knob-color, var(--d2l-color-celestine));
+				--calculated-d2l-inner-knob-color: var(--d2l-inner-knob-color, var(--d2l-color-celestine-plus-1));
+				--calculated-d2l-knob-focus-color: var(--d2l-knob-focus-color, var(--d2l-color-celestine));
+				--calculated-d2l-knob-focus-size: var(--d2l-knob-focus-size, 2px);
+				--calculated-d2l-progress-background-color: var(--d2l-progress-background-color, var(--d2l-color-corundum));
 				--calculated-d2l-progress-border-color: var(--d2l-progress-border-color, var(--d2l-color-pressicus));
 				--calculated-d2l-progress-border-radius: var(--d2l-progress-border-radius, 4px);
-				--calculated-d2l-progress-shadow-color: var(--d2l-progress-shadow-color, #dadee3);
-				--calculated-d2l-progress-background-color: var(--d2l-progress-background-color, var(--d2l-color-gypsum));
-				--calculated-d2l-progress-active-color: var(--d2l-progress-active-color, var(--d2l-color-gypsum));
+				--calculated-d2l-progress-shadow-color: var(--d2l-progress-shadow-color, var(--d2l-color-galena));
+				--calculated-d2l-progress-active-color: var(--d2l-progress-active-color, var(--d2l-color-celestine-plus-1));
 			}
 
 			:host(:focus) {
 				outline: none;
 			}
 
-			:host(:focus) .slider-knob {
-				outline: 2px solid white;
+			:host(:focus) .slider-knob:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				border-radius: 50%;
+				box-shadow: 0 0 0 var(--calculated-d2l-knob-focus-size) var(--calculated-d2l-knob-focus-color);
+			}
+
+			:host([solid]) .slider-knob-inner  {
+				display: none;
 			}
 
 			#sliderContainer {
@@ -67,9 +80,9 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				width: 100%;
 				--d2l-progress-primary: {
 					border-radius: 4px;
+					box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.07);
 				}
 				--d2l-progress-container: {
-					border: 1px solid var(--calculated-d2l-progress-border-color);
 					border-radius: var(--calculated-d2l-progress-border-radius);
 					box-shadow: inset 0 1px 0 0 var(--calculated-d2l-progress-shadow-color);
 				}
@@ -85,7 +98,6 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				width: calc((((var(--calculated-d2l-knob-size) / 2) - var(--calculated-d2l-seek-bar-height) / 2) * 2) + var(--calculated-d2l-seek-bar-height) - 2px);
 				height: calc((((var(--calculated-d2l-knob-size) / 2) - var(--calculated-d2l-seek-bar-height) / 2) * 2) + var(--calculated-d2l-seek-bar-height) - 2px);
 				background-color: var(--calculated-d2l-outer-knob-color);
-				border: 1px solid var(--calculated-d2l-outer-knob-border-color);
 				box-shadow: var(--calculated-d2l-knob-box-shadow);
 				border-radius: 50%;
 				cursor: pointer;
@@ -96,9 +108,9 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				width: calc(100% - var(--calculated-inner-knob-margin)*2);
 				height: calc(100% - var(--calculated-inner-knob-margin)*2);
 				background-color: var(--calculated-d2l-inner-knob-color);
-				border: 2px solid var(--calculated-d2l-inner-knob-color);
 				border-radius: 50%;
 				box-sizing: border-box;
+				box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.07)
 			}
 
 		</style>
