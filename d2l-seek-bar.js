@@ -24,7 +24,7 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				--d2l-color-corundum-65-opacity: rgba(181, 189, 194, 0.65);
 				--d2l-color-galena-88-opacity: rgba(134, 140, 143, 0.88);
 
-				--calculated-d2l-seek-bar-height: var(--d2l-seek-bar-height, 4px);
+				--calculated-d2l-seek-bar-height: var(--d2l-seek-bar-height, 6px);
 				--calculated-d2l-knob-size: var(--d2l-knob-size, 32px);
 				--half-knob-size: calc(var(--calculated-d2l-knob-size)/2);
 				--half-knob-size-overflow: calc((var(--calculated-d2l-knob-size) - var(--calculated-d2l-seek-bar-height)) / 2 - 1px);
@@ -37,7 +37,7 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				--calculated-d2l-knob-focus-size: var(--d2l-knob-focus-size, 2px);
 				--calculated-d2l-progress-background-color: var(--d2l-progress-background-color, var(--d2l-color-corundum-65-opacity));
 				--calculated-d2l-progress-border-color: var(--d2l-progress-border-color, var(--d2l-color-pressicus));
-				--calculated-d2l-progress-border-radius: var(--d2l-progress-border-radius, 4px);
+				--calculated-d2l-progress-border-radius: var(--d2l-progress-border-radius, 6px);
 				--calculated-d2l-progress-shadow-color: var(--d2l-progress-shadow-color, var(--d2l-color-galena-88-opacity));
 				--calculated-d2l-progress-active-color: var(--d2l-progress-active-color, var(--d2l-color-celestine-plus-1));
 			}
@@ -83,7 +83,7 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				padding: var(--half-knob-size-overflow) 0;
 				width: 100%;
 				--d2l-progress-primary: {
-					border-radius: 4px;
+					border-radius: var(--calculated-d2l-progress-border-radius);
 					box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.07);
 				}
 				--d2l-progress-container: {

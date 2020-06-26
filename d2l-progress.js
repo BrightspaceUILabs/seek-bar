@@ -22,7 +22,7 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-progress">
 			#progressContainer {
 				@apply --d2l-progress-container;
 				position: relative;
-				height: var(--d2l-progress-height, 4px);
+				height: var(--d2l-progress-height, 6px);
 				background: var(--d2l-progress-container-color, var(--d2l-color-gypsum));
 			}
 
