@@ -68,9 +68,23 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				margin-right: var(--half-knob-size);
 			}
 
+			#knobContainer {
+				pointer-events: none;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+
 			:host([fullWidth]) #sliderContainer {
 				margin-left: 0;
 				margin-right: 0;
+			}
+
+			:host([fullWidth]) #knobContainer {
+				left: var(--half-knob-size);
+				right: var(--half-knob-size);
 			}
 
 			.bar-container {
@@ -123,8 +137,10 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 			<div class="bar-container">
 				<d2l-progress id="sliderBar" value="{{immediateValue}}" on-down="_barDown" on-up="_barUp" on-track="_onTrack"></d2l-progress>
 			</div>
-			<div id="sliderKnob" class="slider-knob" on-down="_knobDown" on-track="_onTrack">
-				<div class="slider-knob-inner"></div>
+			<div id="knobContainer">
+				<div id="sliderKnob" class="slider-knob" on-down="_knobDown" on-track="_onTrack">
+					<div class="slider-knob-inner"></div>
+				</div>
 			</div>
 		</div>
 	</template>
@@ -256,7 +272,7 @@ Polymer({
 	},
 
 	_trackStart: function() {
-		this._w = this.$.sliderBar.offsetWidth;
+		this._w = this.$.knobContainer.offsetWidth;
 		this._x = this.ratio * this._w;
 		this._startx = this._x;
 		this._knobstartx = this._startx;
@@ -291,8 +307,8 @@ Polymer({
 	},
 
 	_barDown: function(event) {
-		this._w = this.$.sliderBar.offsetWidth;
-		var rect = this.$.sliderBar.getBoundingClientRect();
+		this._w = this.$.knobContainer.offsetWidth;
+		var rect = this.$.knobContainer.getBoundingClientRect();
 
 		var mousePosition = this.vertical ? rect.bottom - event.detail.y : event.detail.x - rect.left;
 		var ratio = mousePosition / this._w;
