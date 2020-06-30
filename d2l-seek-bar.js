@@ -119,6 +119,7 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				box-shadow: var(--calculated-d2l-knob-box-shadow);
 				border-radius: 50%;
 				cursor: pointer;
+				z-index: 1;
 			}
 
 			.slider-knob-inner {
