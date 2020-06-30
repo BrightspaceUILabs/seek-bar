@@ -20,23 +20,45 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				@apply --layout-justified;
 				@apply --layout-center;
 				display: block;
-				--calculated-d2l-seek-bar-height: var(--d2l-seek-bar-height, 4px);
+
+				--d2l-color-corundum-65-opacity: rgba(181, 189, 194, 0.65);
+				--d2l-color-galena-88-opacity: rgba(134, 140, 143, 0.88);
+
+				--calculated-d2l-seek-bar-height: var(--d2l-seek-bar-height, 6px);
 				--calculated-d2l-knob-size: var(--d2l-knob-size, 32px);
 				--half-knob-size: calc(var(--calculated-d2l-knob-size)/2);
 				--half-knob-size-overflow: calc((var(--calculated-d2l-knob-size) - var(--calculated-d2l-seek-bar-height)) / 2 - 1px);
-				--calculated-inner-knob-margin: var(--d2l-inner-knob-margin, 9px);
-				--calculated-d2l-knob-box-shadow: var(--d2l-knob-box-shadow, none);
+				--calculated-inner-knob-margin: var(--d2l-inner-knob-margin, 8px);
+				--calculated-d2l-knob-box-shadow: var(--d2l-knob-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.52));
 				--calculated-d2l-outer-knob-color: var(--d2l-outer-knob-color, var(--d2l-color-regolith));
 				--calculated-d2l-outer-knob-border-color: var(--d2l-outer-knob-border-color, var(--d2l-color-pressicus));
-				--calculated-d2l-inner-knob-color: var(--d2l-inner-knob-color, var(--d2l-color-celestine));
+				--calculated-d2l-inner-knob-color: var(--d2l-inner-knob-color, var(--d2l-color-celestine-plus-1));
+				--calculated-d2l-knob-focus-color: var(--d2l-knob-focus-color, var(--d2l-color-celestine));
+				--calculated-d2l-knob-focus-size: var(--d2l-knob-focus-size, 2px);
+				--calculated-d2l-progress-background-color: var(--d2l-progress-background-color, var(--d2l-color-corundum-65-opacity));
 				--calculated-d2l-progress-border-color: var(--d2l-progress-border-color, var(--d2l-color-pressicus));
-				--calculated-d2l-progress-shadow-color: var(--d2l-progress-shadow-color, #dadee3);
-				--calculated-d2l-progress-background-color: var(--d2l-progress-background-color, var(--d2l-color-gypsum));
+				--calculated-d2l-progress-border-radius: var(--d2l-progress-border-radius, 6px);
+				--calculated-d2l-progress-shadow-color: var(--d2l-progress-shadow-color, var(--d2l-color-galena-88-opacity));
+				--calculated-d2l-progress-active-color: var(--d2l-progress-active-color, var(--d2l-color-celestine-plus-1));
 			}
 
 			:host(:focus) {
-				background: var(--d2l-color-regolith);
-				outline: 2px solid var(--d2l-color-celestine);
+				outline: none;
+			}
+
+			:host(:focus) .slider-knob:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				border-radius: 50%;
+				box-shadow: 0 0 0 var(--calculated-d2l-knob-focus-size) var(--calculated-d2l-knob-focus-color);
+			}
+
+			:host([solid]) .slider-knob-inner  {
+				display: none;
 			}
 
 			#sliderContainer {
@@ -44,6 +66,25 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				height: var(--calculated-d2l-knob-size);
 				margin-left: var(--half-knob-size);
 				margin-right: var(--half-knob-size);
+			}
+
+			#knobContainer {
+				pointer-events: none;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+
+			:host([fullWidth]) #sliderContainer {
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+			:host([fullWidth]) #knobContainer {
+				left: var(--half-knob-size);
+				right: var(--half-knob-size);
 			}
 
 			.bar-container {
@@ -56,15 +97,15 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				padding: var(--half-knob-size-overflow) 0;
 				width: 100%;
 				--d2l-progress-primary: {
-					border-radius: 4px;
+					border-radius: var(--calculated-d2l-progress-border-radius);
+					box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.07);
 				}
 				--d2l-progress-container: {
-					border: 1px solid var(--calculated-d2l-progress-border-color);
-					border-radius: 4px;
+					border-radius: var(--calculated-d2l-progress-border-radius);
 					box-shadow: inset 0 1px 0 0 var(--calculated-d2l-progress-shadow-color);
 				}
 				--d2l-progress-container-color: var(--calculated-d2l-progress-background-color);
-				--d2l-progress-active-color: transparent;
+				--d2l-progress-active-color: var(--calculated-d2l-progress-active-color);
 			}
 
 			.slider-knob {
@@ -75,7 +116,6 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				width: calc((((var(--calculated-d2l-knob-size) / 2) - var(--calculated-d2l-seek-bar-height) / 2) * 2) + var(--calculated-d2l-seek-bar-height) - 2px);
 				height: calc((((var(--calculated-d2l-knob-size) / 2) - var(--calculated-d2l-seek-bar-height) / 2) * 2) + var(--calculated-d2l-seek-bar-height) - 2px);
 				background-color: var(--calculated-d2l-outer-knob-color);
-				border: 1px solid var(--calculated-d2l-outer-knob-border-color);
 				box-shadow: var(--calculated-d2l-knob-box-shadow);
 				border-radius: 50%;
 				cursor: pointer;
@@ -86,19 +126,21 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				width: calc(100% - var(--calculated-inner-knob-margin)*2);
 				height: calc(100% - var(--calculated-inner-knob-margin)*2);
 				background-color: var(--calculated-d2l-inner-knob-color);
-				border: 2px solid var(--calculated-d2l-inner-knob-color);
 				border-radius: 50%;
 				box-sizing: border-box;
+				box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.07)
 			}
 
 		</style>
 
-		<div id="sliderContainer">
+		<div id="sliderContainer" fullWidth$="[[fullWidth]]">
 			<div class="bar-container">
 				<d2l-progress id="sliderBar" value="{{immediateValue}}" on-down="_barDown" on-up="_barUp" on-track="_onTrack"></d2l-progress>
 			</div>
-			<div id="sliderKnob" class="slider-knob" on-down="_knobDown" on-track="_onTrack">
-				<div class="slider-knob-inner"></div>
+			<div id="knobContainer">
+				<div id="sliderKnob" class="slider-knob" on-down="_knobDown" on-track="_onTrack">
+					<div class="slider-knob-inner"></div>
+				</div>
 			</div>
 		</div>
 	</template>
@@ -133,6 +175,11 @@ Polymer({
 			type: Boolean,
 			value: false
 		},
+
+		fullWidth: {
+			type: Boolean,
+			value: false
+		}
 	},
 
 	hostAttributes: {
@@ -225,7 +272,7 @@ Polymer({
 	},
 
 	_trackStart: function() {
-		this._w = this.$.sliderBar.offsetWidth;
+		this._w = this.$.knobContainer.offsetWidth;
 		this._x = this.ratio * this._w;
 		this._startx = this._x;
 		this._knobstartx = this._startx;
@@ -260,8 +307,8 @@ Polymer({
 	},
 
 	_barDown: function(event) {
-		this._w = this.$.sliderBar.offsetWidth;
-		var rect = this.$.sliderBar.getBoundingClientRect();
+		this._w = this.$.knobContainer.offsetWidth;
+		var rect = this.$.knobContainer.getBoundingClientRect();
 
 		var mousePosition = this.vertical ? rect.bottom - event.detail.y : event.detail.x - rect.left;
 		var ratio = mousePosition / this._w;

@@ -48,7 +48,7 @@
 
 			$_documentContainer.innerHTML = `<demo-snippet>
 			<template>
-				<d2l-seek-bar value="60"></d2l-seek-bar>
+				<d2l-seek-bar value="60" fullWidth></d2l-seek-bar>
 			</template>
 		</demo-snippet>`;
 
@@ -100,6 +100,26 @@
 						<label>Ratio <input type="number" value="{{seekBarRatio::input}}"></label><br>
 						<label>Step <input type="number" value="{{seekBarStep::input}}"></label><br>
 						<label>Value <input type="number" value="{{seekBarValue::input}}"></label><br>
+					</template>
+				</dom-bind>
+			</template>
+		</demo-snippet>`;
+
+			document.body.appendChild($_documentContainer.content);
+		</script>
+		<script type="module">
+			const $_documentContainer = document.createElement('template');
+			$_documentContainer.innerHTML = '<h2>Seek bar with full width</h2>';
+			document.body.appendChild($_documentContainer.content);
+		</script>
+		<script type="module">
+			const $_documentContainer = document.createElement('template');
+
+			$_documentContainer.innerHTML = `<demo-snippet>
+			<template>
+				<dom-bind>
+					<template is="dom-bind">
+						<d2l-seek-bar style="border: 1px solid #ddd;" value="60" fullWidth></d2l-seek-bar>
 					</template>
 				</dom-bind>
 			</template>
