@@ -258,6 +258,7 @@ Polymer({
 	},
 
 	_onTrack: function(event) {
+		this.dispatchEvent(new CustomEvent('position-change', { bubbles: true, composed: true }));
 		event.stopPropagation();
 		switch (event.detail.state) {
 			case 'start':
