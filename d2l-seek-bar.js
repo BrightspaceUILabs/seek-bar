@@ -235,7 +235,7 @@ Polymer({
 			var ratio = mousePosition / this.$.knobContainer.offsetWidth;
 
 			var value = this._calcStep(this._calcKnobPosition(ratio));
-			if (value <= this.max && value >= this.min)
+			if (value >= this.min && value <= this.max)
 				this._setHoverValue(value)
 		}
 	},
