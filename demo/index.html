@@ -87,14 +87,17 @@
 			<template>
 				<dom-bind>
 					<template is="dom-bind">
-						<d2l-seek-bar dragging="{{seekBarDragging}}"
+						<d2l-seek-bar dragging="{{seekBarDragging}}" hovering="{{seekBarHovering}}"
 							immediate-value="{{seekBarImmediateValue}}"
+							hover-value="{{seekBarHoverValue}}"
 							max="{{seekBarMax}}" min="{{seekBarMin}}"
 							ratio="{{seekBarRatio}}" step="{{seekBarStep}}"
 							value="{{seekBarValue}}">
 						</d2l-seek-bar><br>
+						<label>Hovering <input value="{{seekBarHovering}}" readonly=""></label><br>
 						<label>Dragging <input value="{{seekBarDragging}}" readonly=""></label><br>
 						<label>Immediate Value <input type="number" value="{{seekBarImmediateValue}}" readonly=""></label><br>
+						<label>Hover Value <input type="number" value="{{seekBarHoverValue}}" readonly=""></label><br>
 						<label>Max <input type="number" value="{{seekBarMax::input}}"></label><br>
 						<label>Min <input type="number" value="{{seekBarMin::input}}"></label><br>
 						<label>Ratio <input type="number" value="{{seekBarRatio::input}}"></label><br>
