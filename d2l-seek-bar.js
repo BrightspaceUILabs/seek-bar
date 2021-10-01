@@ -210,10 +210,10 @@ Polymer({
 	},
 
 	listeners: {
-        mouseover: '_onHostHover',
+		mouseover: '_onHostHover',
 		mousemove: '_onHostMove',
-        mouseout: '_onHostUnhover',
-    },
+		mouseout: '_onHostUnhover',
+	},
 
 	observers: [
 		'_updateKnob(value, min, max)',
@@ -223,24 +223,23 @@ Polymer({
 		'_hoveringChanged(hovering)'
 	],
 
-
-	_onHostHover: function(e){
+	_onHostHover: function() {
 		this._setHovering(true);
 	},
 
-	_onHostMove: function(e){
-		if (this.hovering){
+	_onHostMove: function(e) {
+		if (this.hovering) {
 			var rect = this.$.knobContainer.getBoundingClientRect();
 			var mousePosition = this.vertical ? rect.bottom - e.clientY : e.clientX - rect.left;
 			var ratio = mousePosition / this.$.knobContainer.offsetWidth;
 
 			var value = this._calcStep(this._calcKnobPosition(ratio));
 			if (value >= this.min && value <= this.max)
-				this._setHoverValue(value)
+				this._setHoverValue(value);
 		}
 	},
 
-	_onHostUnhover: function(e){
+	_onHostUnhover: function() {
 		this._setHovering(false);
 	},
 
@@ -293,7 +292,7 @@ Polymer({
 	},
 
 	_hoverValueChanged: function() {
-		if(this.hovering){
+		if (this.hovering) {
 			this.dispatchEvent(new CustomEvent('hovering-move', { bubbles: true, composed: true }));
 		}
 	},
