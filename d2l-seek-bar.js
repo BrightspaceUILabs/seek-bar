@@ -5,7 +5,7 @@ Polymer-based web component for a D2L seek-bar
 */
 import '@polymer/polymer/polymer-legacy.js';
 
-import '@brightspace-ui/core/components/colors/colors.js'
+import '@brightspace-ui/core/components/colors/colors.js';
 import { IronRangeBehavior } from '@polymer/iron-range-behavior/iron-range-behavior.js';
 import { IronA11yKeysBehavior } from '@polymer/iron-a11y-keys-behavior/iron-a11y-keys-behavior.js';
 import './d2l-progress.js';

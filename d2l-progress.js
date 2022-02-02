@@ -1,4 +1,4 @@
-import '@brightspace-ui/core/components/colors/colors.js'
+import '@brightspace-ui/core/components/colors/colors.js';
 import '@polymer/polymer/polymer-legacy.js';
 import '@polymer/iron-flex-layout/iron-flex-layout-classes.js';
 import { IronRangeBehavior } from '@polymer/iron-range-behavior/iron-range-behavior.js';
