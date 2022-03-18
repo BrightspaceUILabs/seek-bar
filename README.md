@@ -4,7 +4,6 @@ A Polymer seek bar to use with audio and video players.
 
 ## Usage
 
-
 * Ensure you have the correct .npmrc file in your project or home directory
 * Run `npm install`
 * Import and use the component:
