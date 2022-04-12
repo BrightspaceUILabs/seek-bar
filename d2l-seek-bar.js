@@ -21,8 +21,8 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 				@apply --layout-center;
 				display: block;
 
-				--d2l-color-corundum-65-opacity: rgba(181, 189, 194, 0.65);
-				--d2l-color-galena-88-opacity: rgba(134, 140, 143, 0.88);
+				--d2l-color-corundum-65-opacity: rgba(177, 185, 190, 0.65);
+				--d2l-color-galena-88-opacity: rgba(110, 116, 119, 0.88);
 
 				--calculated-d2l-seek-bar-height: var(--d2l-seek-bar-height, 6px);
 				--calculated-d2l-knob-size: var(--d2l-knob-size, 32px);
