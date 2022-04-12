@@ -1,6 +1,6 @@
 {
   "name": "@d2l/seek-bar",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Polymer media seek bar component",
   "repository": {
     "type": "git",
