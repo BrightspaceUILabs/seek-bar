@@ -9,7 +9,7 @@
   "homepage": "https://github.com/Brightspace/d2l-seek-bar",
   "scripts": {
     "lint": "npm run lint:wc && npm run lint:js",
-    "lint:js": "eslint . --ext .js,.html test/**/*.html demo/**/*.js demo/**/*.html",
+    "lint:js": "eslint . --ext .js,.html test/**/*.html demo/**/*.html",
     "lint:wc": "polymer lint",
     "start": "polymer serve -p 9998",
     "test": "npm run lint && npm run test:polymer:local",
