@@ -16,5 +16,8 @@ jobs:
         run: npm install
       - name: Lint
         run: npm run lint
-      - name: Unit Tests
-        run: npm run test
+      - name: Unit Tests (SauceLabs)
+        env:
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY_DESIRE2LEARN }}
+          SAUCE_USERNAME: Desire2Learn
+        run: npm run test:polymer:sauce
