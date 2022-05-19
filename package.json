@@ -4,9 +4,9 @@
   "description": "Polymer media seek bar component",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Brightspace/d2l-seek-bar.git"
+    "url": "https://github.com/BrightspaceUILabs/seek-bar.git"
   },
-  "homepage": "https://github.com/Brightspace/d2l-seek-bar",
+  "homepage": "https://github.com/BrightspaceUILabs/seek-bar",
   "scripts": {
     "lint": "npm run lint:wc && npm run lint:js",
     "lint:js": "eslint . --ext .js,.html test/**/*.html demo/**/*.html",
