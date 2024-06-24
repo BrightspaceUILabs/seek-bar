@@ -136,7 +136,7 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-seek-bar">
 
 		<div id="sliderContainer" fullWidth$="[[fullWidth]]">
 			<div class="bar-container">
-				<d2l-progress id="sliderBar" value="{{immediateValue}}" on-down="_barDown" on-up="_barUp" on-track="_onTrack"></d2l-progress>
+				<d2l-progress id="sliderBar" min="{{min}}" max="{{max}}" value="{{immediateValue}}" on-down="_barDown" on-up="_barUp" on-track="_onTrack"></d2l-progress>
 			</div>
 			<div id="knobContainer">
 				<div id="sliderKnob" class="slider-knob" on-down="_knobDown" on-track="_onTrack">
