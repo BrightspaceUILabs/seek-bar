@@ -1,7 +1,7 @@
 {
   "name": "@brightspace-ui-labs/seek-bar",
   "type": "module",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Polymer media seek bar component",
   "repository": {
     "type": "git",
